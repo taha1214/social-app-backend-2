@@ -4,14 +4,14 @@ const blogSchema = new mongoose.Schema(
     {
         title: {
           type: String,
-          required: true,
+          // required: true,
         },
         description: {
           type: String,
           required: true,
         },
         image: String,
-        category: String,
+        // category: String,
         author: { type: mongoose.Types.ObjectId, ref: "user" 
         },
         likes: { type: Number, default: 0 },

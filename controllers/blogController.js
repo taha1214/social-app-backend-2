@@ -83,9 +83,9 @@ const likeBlog = (req, res) => {
         .then((result) => {
           console.log("🚀 ~ .then ~ result:", result);
           const newBlog = new Blog({
-            title: body.title,
+            // title: body.title,
             description: body.description,
-            category: body.category,
+            // category: body.category,
             author: body.authorId,
             image: result.url,
           });
@@ -128,10 +128,10 @@ const likeBlog = (req, res) => {
           .then((result) => {
             console.log("🚀 ~ .then ~ result:", result);
             Blog.findByIdAndUpdate(body.id, {
-              title: body.title,
+              // title: body.title,
               description: body.description,
               image: result.url,
-              category: body.category,
+              // category: body.category,
             })
               .then((response) => {
                 if (response) {
@@ -141,7 +141,7 @@ const likeBlog = (req, res) => {
                   });
                 } else {
                   res.status(400).send({
-                    message: "Somethig went wrong try again letter",
+                    message: "Something went wrong try again letter",
                     blog: null,
                   });
                 }
@@ -162,9 +162,9 @@ const likeBlog = (req, res) => {
           });
       } else {
         Blog.findByIdAndUpdate(body.id, {
-          title: body.title,
+          // title: body.title,
           description: body.description,
-          category: body.category,
+          // category: body.category,
         })
           .then((response) => {
             if (response) {
@@ -174,7 +174,7 @@ const likeBlog = (req, res) => {
               });
             } else {
               res.status(400).send({
-                message: "Somethig went wrong try again letter",
+                message: "Something went wrong try again letter",
                 blog: null,
               });
             }
